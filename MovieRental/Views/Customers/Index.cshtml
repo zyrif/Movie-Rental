@@ -1,0 +1,33 @@
+﻿@model MovieRental.ViewModels.CustomerListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Customers</h2>
+@if(@Model.Customers.Count == 0)
+{
+    <h5> System doesn't have any customers yet.</h5>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in @Model.Customers)
+        {
+            <tr>
+                <th>@customer.Id</th>
+                <th> <a href="Customers/Details/@customer.Id.ToString()"> @customer.Name </a></th>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+
