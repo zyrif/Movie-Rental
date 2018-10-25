@@ -1,10 +1,15 @@
 ﻿@model MovieRental.ViewModels.CustomerDetailsViewModel
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Customer Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
 <p> Name: @Model.Customer.Name</p>
+<p> ID: @Model.Customer.Id</p>
+<p> Date of Birth: @(Model.Customer.Birthdate.HasValue ? Model.Customer.Birthdate.Value.ToString("dd MMM yyyy") : "N/A")</p>
+<p> Subscribed: @Model.Customer.IsSubscribedToNewsLetter</p>
+<p> Membership Type: @Model.Customer.MembershipType.Name</p>
 
+@Html.ActionLink("Edit Customer Details", "Edit", "Customers", new {id = @Model.Customer.Id}, new {@class = "btn btn-primary"})

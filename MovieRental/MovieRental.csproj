@@ -242,6 +242,18 @@
     <Compile Include="Migrations\201810232109129_AddBDayInCustomer.Designer.cs">
       <DependentUpon>201810232109129_AddBDayInCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810241423587_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201810241423587_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201810241423587_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810241424424_UpdateMembershipTypeWithNames.cs" />
+    <Compile Include="Migrations\201810241424424_UpdateMembershipTypeWithNames.Designer.cs">
+      <DependentUpon>201810241424424_UpdateMembershipTypeWithNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810241431492_UpdateMembershipTypeConstraints.cs" />
+    <Compile Include="Migrations\201810241431492_UpdateMembershipTypeConstraints.Designer.cs">
+      <DependentUpon>201810241431492_UpdateMembershipTypeConstraints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -255,7 +267,9 @@
     <Compile Include="ViewModels\CustomerDetailsViewModel.cs" />
     <Compile Include="ViewModels\CustomerListViewModel.cs" />
     <Compile Include="ViewModels\MovieDetailsViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MovieListViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +336,8 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\AddorEdit.cshtml" />
+    <Content Include="Views\Movies\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -369,6 +385,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810232109129_AddBDayInCustomer.resx">
       <DependentUpon>201810232109129_AddBDayInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241423587_AddNameToMembershipType.resx">
+      <DependentUpon>201810241423587_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241424424_UpdateMembershipTypeWithNames.resx">
+      <DependentUpon>201810241424424_UpdateMembershipTypeWithNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241431492_UpdateMembershipTypeConstraints.resx">
+      <DependentUpon>201810241431492_UpdateMembershipTypeConstraints.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

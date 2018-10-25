@@ -1,6 +1,6 @@
 ﻿@model MovieRental.ViewModels.MovieListViewModel
 @{
-    ViewBag.Title = "Random";
+    ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -18,17 +18,22 @@ else
         <tr>
             <th> Movies </th>
             <th> Genre </th>
+            <th> Release Date </th>
+            <th> Number in Stock </th>
         </tr>
         </thead>
 
         <tbody>
-            @foreach (var movie in @Model.Movies)
-            {
-                <tr>
-                    <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new {id=@movie.Id}, null)</td>
-                    <td>@movie.Genre.Name</td>
-                </tr>
-            }
+        @foreach (var movie in @Model.Movies)
+        {
+            <tr>
+                <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new {id=@movie.Id}, null)</td>
+                <td>@movie.Genre.Name</td>
+                <td>@movie.ReleaseDate.ToString("dd MMM yyyy")</td>
+                <td>@movie.NumberInStock</td>
+            </tr>
+        }
         </tbody>
     </table>
+    @Html.ActionLink("Add Movie", "Add", "Movies", new {@class = "btn btn-primary"})
 }

@@ -5,10 +5,15 @@
 }
 
 <h2>@Model.Movie.Name</h2>
+<br/>
 <ul>
     <li>Genre: @Model.Movie.Genre.Name</li>
     <li>Release Date: @Model.Movie.ReleaseDate.ToString("MMMM"), @Model.Movie.ReleaseDate.Year</li>
     <li>Date Added: @Model.Movie.DateAdded.ToString("MMMM"), @Model.Movie.DateAdded.Year.ToString()</li>
     <li>Number in Stock: @Model.Movie.NumberInStock</li>
 </ul>
+
+<br/>
+
+@Html.ActionLink("Edit Movie Details", "Edit", "Movies", new {id=@Model.Movie.Id}, new {@class="btn btn-primary"})
 
